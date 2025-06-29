@@ -145,8 +145,18 @@ public class SuperSurface {
                 simpleMesh[1] = this.vInfinitesimals[y + 1].infinitesimals[x];
                 simpleMesh[2] = this.vInfinitesimals[y].infinitesimals[x + 1];
                 simpleMesh[3] = this.vInfinitesimals[y + 1].infinitesimals[x + 1];
+
+//                simpleMesh[0] = this.vInfinitesimals[y + 1].infinitesimals[x];
+//                simpleMesh[1] = this.vInfinitesimals[y].infinitesimals[x];
+//                simpleMesh[2] = this.vInfinitesimals[y].infinitesimals[x + 1];
+//                simpleMesh[3] = this.vInfinitesimals[y + 1].infinitesimals[x + 1];
+
+
+
+
                 Vector2f[] texCoord = new Vector2f[4];
 
+                /*
                 Vector2f distance = new Vector2f(((this.vInfinitesimals[maxY].infinitesimals[maxX].x) - (this.vInfinitesimals[0].infinitesimals[0].x)), ((this.vInfinitesimals[maxY].infinitesimals[maxX].y) - (this.vInfinitesimals[0].infinitesimals[0].y)));
                 Vector2f base = new Vector2f(this.vInfinitesimals[0].infinitesimals[0].x, this.vInfinitesimals[0].infinitesimals[0].y);
 
@@ -154,6 +164,12 @@ public class SuperSurface {
                 texCoord[1] = new Vector2f( new Vector2f(((this.vInfinitesimals[y + 1].infinitesimals[x].x) - base.x) / distance.x,(this.vInfinitesimals[y + 1].infinitesimals[x].y - base.y )/distance.y));//new Vector2f(1,0);
                 texCoord[2] = new Vector2f( new Vector2f(((this.vInfinitesimals[y].infinitesimals[x + 1].x) - base.x) / distance.x,(this.vInfinitesimals[y].infinitesimals[x + 1].y - base.y)/distance.y));//new Vector2f(0,1);
                 texCoord[3] = new Vector2f( new Vector2f(((this.vInfinitesimals[y + 1].infinitesimals[x + 1].x) - base.x)/distance.x,(this.vInfinitesimals[y + 1].infinitesimals[x + 1].y - base.y)/distance.y));//new Vector2f(1,1);
+
+                */
+                texCoord[0] = new Vector2f((float) x /maxX, (float) y /maxY);
+                texCoord[1] = new Vector2f((float) x /maxX, (float) (y + 1) /maxY);
+                texCoord[2] = new Vector2f((float) (x + 1) /maxX, (float) y /maxY);
+                texCoord[3] = new Vector2f((float) (x + 1) /maxX, (float) (y + 1) /maxY);
 
                 simpleMeshes[(this.vInfinitesimals[0].infinitesimals.length * y) + x] = new SimpleMesh(simpleMesh, texCoord, new Texture2D(atms.makeATMS()), node);
 
