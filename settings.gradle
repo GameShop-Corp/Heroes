@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "HeroRun"
+rootProject.name = "Heroes"
 include ':app'

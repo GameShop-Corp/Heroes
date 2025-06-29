@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.gameshopcorp.herorun'
+    namespace 'com.gameshopcorp.heroes'
     compileSdk 36
 
     defaultConfig {
-        applicationId "com.gameshopcorp.herorun"
+        applicationId "com.gameshopcorp.heroes"
         minSdk 21
         targetSdk 36
         versionCode 1
