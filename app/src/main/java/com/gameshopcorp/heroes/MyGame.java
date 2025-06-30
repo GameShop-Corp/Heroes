@@ -1,7 +1,9 @@
 package com.gameshopcorp.heroes;
 
+import com.gameshopcorp.heroes.animation.SuperJoin;
 import com.gameshopcorp.heroes.app.App;
 import com.gameshopcorp.heroes.graphics.ATMS;
+import com.gameshopcorp.heroes.graphics.SuperSurface;
 import com.gameshopcorp.heroes.supermesh.SuperCube;
 import com.gameshopcorp.heroes.supermesh.SuperSquare;
 import com.jme3.app.SimpleApplication;
@@ -63,10 +65,14 @@ public final class MyGame extends SimpleApplication {
         }
 
 
-        superCube.superMesh.linkPoints("topLeftFront",new String[]{joins.get(2)}, new Vector2f[]{new Vector2f(3, 0)});
-        superCube.superMesh.moveLinkedPoint("topLeftFront", new Vector3f(-1,1,1));
-        superCube.superMesh.superMesh.get("front").atms.layer.drawCircle(64,64,64,new Vector4f(0,0,255,255));
-        superCube.superMesh.superMesh.get("front").updateSimpleMeshes();
+        SuperJoin superJoin = new SuperJoin(new SuperSurface[]{superCube.superMesh.superMesh.get("top"),superCube.superMesh.superMesh.get("back"),superCube.superMesh.superMesh.get("left")}, new Vector2f[]{new Vector2f(0,0), new Vector2f(3,0), new Vector2f(3,0)});
+        superJoin.moveJoin(new Vector3f(-1,1,-1));
+//        superCube.superMesh.linkPoints("topLeftFront",new String[]{joins.get(2)}, new Vector2f[]{new Vector2f(3, 0)});
+//        superCube.superMesh.moveLinkedPoint("topLeftFront", new Vector3f(-1,1,1));
+//        superCube.superMesh.superMesh.get("front").atms.layer.drawCircle(64,64,64,new Vector4f(0,0,255,255));
+        superCube.superMesh.superMesh.get("top").updateSimpleMeshes();
+        superCube.superMesh.superMesh.get("back").updateSimpleMeshes();
+        superCube.superMesh.superMesh.get("left").updateSimpleMeshes();
     }
 
 }

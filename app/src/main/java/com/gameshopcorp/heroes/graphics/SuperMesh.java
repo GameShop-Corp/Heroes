@@ -12,14 +12,14 @@ import java.util.HashMap;
 public class SuperMesh {
 
     public HashMap<String, SuperSurface> superMesh;
-    public HashMap<String, ArrayList<String>> linkNames;
-    public HashMap<String, ArrayList<Vector2f>> linkValues;
+//    public HashMap<String, ArrayList<String>> linkNames;
+//    public HashMap<String, ArrayList<Vector2f>> linkValues;
     Node node;
     public SuperMesh(String[] names, SuperSurface[] superSurfaces){
 
         superMesh = new HashMap<>();
-        linkNames = new HashMap<>();
-        linkValues = new HashMap<>();
+//        linkNames = new HashMap<>();
+//        linkValues = new HashMap<>();
 
         node = new Node("SuperMesh");
         int i = 0;
@@ -36,25 +36,25 @@ public class SuperMesh {
 
     }
 
-    public void linkPoints(String name, String[] superSurfaceNames, Vector2f[] superSurfacePoints){
+//    public void linkPoints(String name, String[] superSurfaceNames, Vector2f[] superSurfacePoints){
+//
+//        ArrayList<String> namesArray = new ArrayList<>(Arrays.asList(superSurfaceNames));
+//
+//        ArrayList<Vector2f> pointsArray = new ArrayList<>(Arrays.asList(superSurfacePoints));
+//
+//        linkNames.put(name, namesArray);
+//        linkValues.put(name, pointsArray);
+//
+//    }
 
-        ArrayList<String> namesArray = new ArrayList<>(Arrays.asList(superSurfaceNames));
-
-        ArrayList<Vector2f> pointsArray = new ArrayList<>(Arrays.asList(superSurfacePoints));
-
-        linkNames.put(name, namesArray);
-        linkValues.put(name, pointsArray);
-
-    }
-
-    public void moveLinkedPoint(String name, Vector3f move){
-
-        for (int i = 0; i < linkNames.get(name).size(); i++){
-
-                superMesh.get(linkNames.get(name).get(i)).moveSuperLine((byte) linkValues.get(name).get(i).x, (byte) linkValues.get(name).get(i).y, new Vector3f(move));
-
-        }
-
-    }
+//    public void moveLinkedPoint(String name, Vector3f move){
+//
+//        for (int i = 0; i < linkNames.get(name).size(); i++){
+//
+//                superMesh.get(linkNames.get(name).get(i)).moveSuperLine((byte) linkValues.get(name).get(i).x, (byte) linkValues.get(name).get(i).y, new Vector3f(move));
+//
+//        }
+//
+//    }
 
 }
