@@ -1,4 +1,4 @@
 package com.gameshopcorp.heroes.character.basic.body;
 
-public class Chest {
+public class Waist {
 }

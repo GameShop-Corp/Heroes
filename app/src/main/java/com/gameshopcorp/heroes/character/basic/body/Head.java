@@ -97,12 +97,6 @@ public class Head extends Base {
         this.superMesh.superMesh.get("bottom").moveSuperLine((byte) 2, (byte) 2,new Vector3f(0,-.75f,0));
 
 
-//        this.superMesh.superJoins.get("bottomFrontRight").moveJoin(new Vector3f(-.25f,.25f,-.25f));
-//        this.superMesh.superJoins.get("edgeBottomFrontMidRight").moveJoin(new Vector3f(0,-.15f,-.1f));
-
-        //edgeLeftBottomMidFront
-        //edgeLeftBottomMidBack
-
 
     }
 }
