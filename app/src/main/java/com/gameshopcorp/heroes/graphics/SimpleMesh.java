@@ -73,8 +73,8 @@ public class SimpleMesh {
         mat.getAdditionalRenderState().setFaceCullMode(RenderState.FaceCullMode.Off);
         mat.getAdditionalRenderState().setBlendMode(RenderState.BlendMode.Alpha);
         mat.setTransparent(true);
-        mat.getAdditionalRenderState().setDepthTest(false);
-        mat.getAdditionalRenderState().setDepthWrite(false);
+        mat.getAdditionalRenderState().setDepthTest(true);
+        mat.getAdditionalRenderState().setDepthWrite(true);
         // mat.setColor("Color", ColorRGBA.fromRGBA255(255,255,255,255));
         mat.setTexture("ColorMap", this.texture);
         geom.setQueueBucket(RenderQueue.Bucket.Transparent);

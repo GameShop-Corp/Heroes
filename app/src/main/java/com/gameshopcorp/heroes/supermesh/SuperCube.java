@@ -5,17 +5,39 @@ import com.gameshopcorp.heroes.graphics.SuperMesh;
 import com.gameshopcorp.heroes.graphics.SuperSurface;
 import com.jme3.math.Vector2f;
 import com.jme3.math.Vector3f;
+import com.jme3.math.Vector4f;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SuperCube {
 
+    boolean debug = true;
     public SuperMesh superMesh;
     public HashMap<String, SuperJoin> superJoins;
     public SuperCube(SuperSquare top, SuperSquare bottom, SuperSquare front, SuperSquare back, SuperSquare left, SuperSquare right){
 
+
         superMesh = new SuperMesh(new String[]{"top","bottom","front","back","left","right"}, new SuperSurface[]{top.superMesh.superMesh.get(top.name), bottom.superMesh.superMesh.get(bottom.name), front.superMesh.superMesh.get(front.name), back.superMesh.superMesh.get(back.name), left.superMesh.superMesh.get(left.name), right.superMesh.superMesh.get(right.name)});
+
+        if (debug){
+
+            superMesh.superMesh.get("top").atms.layer.drawCircle(superMesh.superMesh.get("top").atms.width/2, superMesh.superMesh.get("top").atms.height/2, superMesh.superMesh.get("top").atms.width + superMesh.superMesh.get("top").atms.height, new Vector4f(0,0,255,255));
+            superMesh.superMesh.get("top").updateSimpleMeshes();
+            superMesh.superMesh.get("bottom").atms.layer.drawCircle(superMesh.superMesh.get("bottom").atms.width/2, superMesh.superMesh.get("bottom").atms.height/2, superMesh.superMesh.get("bottom").atms.width + superMesh.superMesh.get("bottom").atms.height, new Vector4f(255,0,0,255));
+            superMesh.superMesh.get("bottom").updateSimpleMeshes();
+            superMesh.superMesh.get("front").atms.layer.drawCircle(superMesh.superMesh.get("front").atms.width/2, superMesh.superMesh.get("front").atms.height/2, superMesh.superMesh.get("front").atms.width + superMesh.superMesh.get("front").atms.height, new Vector4f(0,255,0,255));
+            superMesh.superMesh.get("front").updateSimpleMeshes();
+            superMesh.superMesh.get("back").atms.layer.drawCircle(superMesh.superMesh.get("back").atms.width/2, superMesh.superMesh.get("back").atms.height/2, superMesh.superMesh.get("back").atms.width + superMesh.superMesh.get("back").atms.height, new Vector4f(255,0,255,255));
+            superMesh.superMesh.get("back").updateSimpleMeshes();
+            superMesh.superMesh.get("left").atms.layer.drawCircle(superMesh.superMesh.get("left").atms.width/2, superMesh.superMesh.get("left").atms.height/2, superMesh.superMesh.get("left").atms.width + superMesh.superMesh.get("left").atms.height, new Vector4f(0,255,255,255));
+            superMesh.superMesh.get("left").updateSimpleMeshes();
+            superMesh.superMesh.get("right").atms.layer.drawCircle(superMesh.superMesh.get("right").atms.width/2, superMesh.superMesh.get("right").atms.height/2, superMesh.superMesh.get("right").atms.width + superMesh.superMesh.get("right").atms.height, new Vector4f(255,255,0,255));
+            superMesh.superMesh.get("right").updateSimpleMeshes();
+
+        }
+
+
         superJoins = new HashMap<>();
 
         SuperJoin topFrontLeft = new SuperJoin(new SuperSurface[]{superMesh.superMesh.get("top"), superMesh.superMesh.get("front"), superMesh.superMesh.get("left")}, new Vector2f[]{new Vector2f(3,0), new Vector2f(3,0), new Vector2f(3,3)});
@@ -48,8 +70,19 @@ public class SuperCube {
         SuperJoin edgeBackRightMidTop = new SuperJoin(new SuperSurface[]{superMesh.superMesh.get("back"), superMesh.superMesh.get("right")}, new Vector2f[]{new Vector2f(2,3), new Vector2f(2,0)});
         SuperJoin edgeBackRightMidBottom = new SuperJoin(new SuperSurface[]{superMesh.superMesh.get("back"), superMesh.superMesh.get("right")}, new Vector2f[]{new Vector2f(1,3), new Vector2f(1,0)});
 
+        SuperJoin edgeLeftTopMidFront = new SuperJoin(new SuperSurface[]{superMesh.superMesh.get("left"), superMesh.superMesh.get("top")}, new Vector2f[]{new Vector2f(3,2), new Vector2f(2,0)});
+        SuperJoin edgeLeftTopMidBack = new SuperJoin(new SuperSurface[]{superMesh.superMesh.get("left"), superMesh.superMesh.get("top")}, new Vector2f[]{new Vector2f(3,1), new Vector2f(1,0)});
+        SuperJoin edgeLeftBottomMidFront = new SuperJoin(new SuperSurface[]{superMesh.superMesh.get("left"), superMesh.superMesh.get("bottom")}, new Vector2f[]{new Vector2f(0,2), new Vector2f(2,0)});
+        SuperJoin edgeLeftBottomMidBack = new SuperJoin(new SuperSurface[]{superMesh.superMesh.get("left"), superMesh.superMesh.get("bottom")}, new Vector2f[]{new Vector2f(0,1), new Vector2f(1,0)});
+
+        SuperJoin edgeRightTopMidFront = new SuperJoin(new SuperSurface[]{superMesh.superMesh.get("right"), superMesh.superMesh.get("top")}, new Vector2f[]{new Vector2f(3,2), new Vector2f(2,3)});
+        SuperJoin edgeRightTopMidBack = new SuperJoin(new SuperSurface[]{superMesh.superMesh.get("right"), superMesh.superMesh.get("top")}, new Vector2f[]{new Vector2f(3,1), new Vector2f(1,3)});
+        SuperJoin edgeRightBottomMidFront = new SuperJoin(new SuperSurface[]{superMesh.superMesh.get("right"), superMesh.superMesh.get("bottom")}, new Vector2f[]{new Vector2f(0,2), new Vector2f(2,3)});
+        SuperJoin edgeRightBottomMidBack = new SuperJoin(new SuperSurface[]{superMesh.superMesh.get("right"), superMesh.superMesh.get("bottom")}, new Vector2f[]{new Vector2f(0,1), new Vector2f(1,3)});
+
+
         //SuperJoin topFrontRight = new SuperJoin()
-        //edgeBackRightMidBottom.moveJoin(new Vector3f( 1,0,-1));
+        //edgeRightBottomMidBack.moveJoin(new Vector3f( 1,-1,0));
 
         superJoins.put("topFrontLeft", topFrontLeft);
         superJoins.put("topFrontRight", topFrontRight);
@@ -80,6 +113,16 @@ public class SuperCube {
         superJoins.put("edgeBackLeftMidBottom", edgeBackLeftMidBottom);
         superJoins.put("edgeBackRightMidTop", edgeBackRightMidTop);
         superJoins.put("edgeBackRightMidBottom", edgeBackRightMidBottom);
+
+        superJoins.put("edgeLeftTopMidFront", edgeLeftTopMidFront);
+        superJoins.put("edgeLeftTopMidBack", edgeLeftTopMidBack);
+        superJoins.put("edgeLeftBottomMidFront", edgeLeftBottomMidFront);
+        superJoins.put("edgeLeftBottomMidBack", edgeLeftBottomMidBack);
+
+        superJoins.put("edgeRightTopMidFront", edgeRightTopMidFront);
+        superJoins.put("edgeRightTopMidBack", edgeRightTopMidBack);
+        superJoins.put("edgeRightBottomMidFront", edgeRightBottomMidFront);
+        superJoins.put("edgeRightBottomMidBack", edgeRightBottomMidBack);
 
         superMesh.superJoins = superJoins;
     }
