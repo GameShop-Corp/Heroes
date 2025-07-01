@@ -46,7 +46,55 @@ public class Head extends Base {
 
         //
 
+        this.superMesh.superMesh.get("front").moveSuperLine((byte) 1, (byte) 1,new Vector3f(0,0,.33f));
+        this.superMesh.superMesh.get("front").moveSuperLine((byte) 1, (byte) 2,new Vector3f(0,0,.33f));
+        this.superMesh.superMesh.get("front").moveSuperLine((byte) 2, (byte) 1,new Vector3f(0,0,.33f));
+        this.superMesh.superMesh.get("front").moveSuperLine((byte) 2, (byte) 2,new Vector3f(0,0,.33f));
 
+        //
+
+        this.superMesh.superMesh.get("top").moveSuperLine((byte) 1, (byte) 1,new Vector3f(0,1,0));
+        this.superMesh.superMesh.get("top").moveSuperLine((byte) 1, (byte) 2,new Vector3f(0,1,0));
+        this.superMesh.superMesh.get("top").moveSuperLine((byte) 2, (byte) 1,new Vector3f(0,1,0));
+        this.superMesh.superMesh.get("top").moveSuperLine((byte) 2, (byte) 2,new Vector3f(0,1,0));
+
+        //
+
+        this.superMesh.superJoins.get("edgeTopFrontMidLeft").moveJoin(new Vector3f(0,.5f, .25f));
+        this.superMesh.superJoins.get("edgeTopFrontMidRight").moveJoin(new Vector3f(0,.5f, .25f));
+
+        //
+
+        this.superMesh.superJoins.get("edgeTopBackMidLeft").moveJoin(new Vector3f(0,.5f, -.25f));
+        this.superMesh.superJoins.get("edgeTopBackMidRight").moveJoin(new Vector3f(0,.5f, -.25f));
+
+        //
+
+        this.superMesh.superMesh.get("left").moveSuperLine((byte) 1, (byte) 1,new Vector3f(-.33f,.45f,0));
+        this.superMesh.superMesh.get("left").moveSuperLine((byte) 1, (byte) 2,new Vector3f(-.33f,.45f,0));
+        this.superMesh.superMesh.get("left").moveSuperLine((byte) 2, (byte) 1,new Vector3f(-.33f,.25f,0));
+        this.superMesh.superMesh.get("left").moveSuperLine((byte) 2, (byte) 2,new Vector3f(-.33f,.25f,0));
+
+        //
+
+        this.superMesh.superMesh.get("right").moveSuperLine((byte) 1, (byte) 1,new Vector3f(.33f,.45f,0));
+        this.superMesh.superMesh.get("right").moveSuperLine((byte) 1, (byte) 2,new Vector3f(.33f,.45f,0));
+        this.superMesh.superMesh.get("right").moveSuperLine((byte) 2, (byte) 1,new Vector3f(.33f,.25f,0));
+        this.superMesh.superMesh.get("right").moveSuperLine((byte) 2, (byte) 2,new Vector3f(.33f,.25f,0));
+
+        //
+
+        this.superMesh.superMesh.get("back").moveSuperLine((byte) 1, (byte) 1,new Vector3f(0,0,-.75f));
+        this.superMesh.superMesh.get("back").moveSuperLine((byte) 1, (byte) 2,new Vector3f(0,0,-.75f));
+        this.superMesh.superMesh.get("back").moveSuperLine((byte) 2, (byte) 1,new Vector3f(0,0,-.75f));
+        this.superMesh.superMesh.get("back").moveSuperLine((byte) 2, (byte) 2,new Vector3f(0,0,-.75f));
+
+        //
+
+        this.superMesh.superMesh.get("bottom").moveSuperLine((byte) 1, (byte) 1,new Vector3f(0,-.75f,0));
+        this.superMesh.superMesh.get("bottom").moveSuperLine((byte) 1, (byte) 2,new Vector3f(0,-.75f,0));
+        this.superMesh.superMesh.get("bottom").moveSuperLine((byte) 2, (byte) 1,new Vector3f(0,-.75f,0));
+        this.superMesh.superMesh.get("bottom").moveSuperLine((byte) 2, (byte) 2,new Vector3f(0,-.75f,0));
 
 
 //        this.superMesh.superJoins.get("bottomFrontRight").moveJoin(new Vector3f(-.25f,.25f,-.25f));
