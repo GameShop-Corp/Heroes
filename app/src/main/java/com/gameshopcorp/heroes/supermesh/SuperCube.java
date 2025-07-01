@@ -80,6 +80,8 @@ public class SuperCube {
         superJoins.put("edgeBackLeftMidBottom", edgeBackLeftMidBottom);
         superJoins.put("edgeBackRightMidTop", edgeBackRightMidTop);
         superJoins.put("edgeBackRightMidBottom", edgeBackRightMidBottom);
+
+        superMesh.superJoins = superJoins;
     }
 
 }

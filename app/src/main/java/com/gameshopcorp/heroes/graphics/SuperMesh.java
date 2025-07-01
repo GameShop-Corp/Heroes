@@ -1,5 +1,6 @@
 package com.gameshopcorp.heroes.graphics;
 
+import com.gameshopcorp.heroes.animation.SuperJoin;
 import com.gameshopcorp.heroes.app.App;
 import com.jme3.math.Vector2f;
 import com.jme3.math.Vector3f;
@@ -12,12 +13,12 @@ import java.util.HashMap;
 public class SuperMesh {
 
     public HashMap<String, SuperSurface> superMesh;
-//    public HashMap<String, ArrayList<String>> linkNames;
-//    public HashMap<String, ArrayList<Vector2f>> linkValues;
+    public HashMap<String, SuperJoin> superJoins;
     public Node node;
     public SuperMesh(String[] names, SuperSurface[] superSurfaces){
 
         superMesh = new HashMap<>();
+        superJoins = new HashMap<>();
 //        linkNames = new HashMap<>();
 //        linkValues = new HashMap<>();
 
