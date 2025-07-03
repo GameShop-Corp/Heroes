@@ -1,4 +1,4 @@
-package com.gameshopcorp.heroes.animation;
+package com.gameshopcorp.heroes.animation.join;
 
 import com.gameshopcorp.heroes.graphics.SuperSurface;
 import com.jme3.math.Vector2f;
@@ -23,6 +23,14 @@ public class SuperJoin {
 
         }
 
+    }
 
+    public void moveJoinWithScale(Vector3f move){
+        for (int i = 0; i < superSurfaces.length; i++){
+
+            Vector3f scale = superSurfaces[i].node.getLocalScale();
+            superSurfaces[i].moveSuperLine((byte) points[i].x, (byte) points[i].y, new Vector3f(move).divide(scale));
+
+        }
     }
 }

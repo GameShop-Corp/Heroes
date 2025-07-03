@@ -1,13 +1,9 @@
 package com.gameshopcorp.heroes.graphics;
 
-import com.gameshopcorp.heroes.animation.SuperJoin;
+import com.gameshopcorp.heroes.animation.join.SuperJoin;
 import com.gameshopcorp.heroes.app.App;
-import com.jme3.math.Vector2f;
-import com.jme3.math.Vector3f;
 import com.jme3.scene.Node;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 
 public class SuperMesh {

@@ -47,24 +47,5 @@ public class Neck extends Base {
         this.superMesh.superJoins.get("edgeRightBottomMidFront").moveJoin(new Vector3f(.35f,0f,0f));
         this.superMesh.superJoins.get("edgeRightBottomMidBack").moveJoin(new Vector3f(.35f,0f,0f));
 
-
-
-//        this.superMesh.superJoins.get("topFrontLeft").moveJoin(new Vector3f(.25f,0f,.25f));
-//        this.superMesh.superJoins.get("topFrontRight").moveJoin(new Vector3f(-.25f,0f,.25f));
-//        this.superMesh.superJoins.get("topBackLeft").moveJoin(new Vector3f(.25f,0f,-.25f));
-//        this.superMesh.superJoins.get("topBackRight").moveJoin(new Vector3f(-.25f,0f,-.25f));
-//
-//        //
-//
-//        this.superMesh.superJoins.get("topFrontLeft").moveJoin(new Vector3f(.25f,0f,.25f));
-//        this.superMesh.superJoins.get("topFrontRight").moveJoin(new Vector3f(-.25f,0f,.25f));
-//        this.superMesh.superJoins.get("topBackLeft").moveJoin(new Vector3f(.25f,0f,-.25f));
-//        this.superMesh.superJoins.get("topBackRight").moveJoin(new Vector3f(-.25f,0f,-.25f));
-
-
-
-
-
-
     }
 }

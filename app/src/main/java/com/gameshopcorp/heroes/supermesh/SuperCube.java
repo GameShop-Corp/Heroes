@@ -1,13 +1,11 @@
 package com.gameshopcorp.heroes.supermesh;
 
-import com.gameshopcorp.heroes.animation.SuperJoin;
+import com.gameshopcorp.heroes.animation.join.SuperJoin;
 import com.gameshopcorp.heroes.graphics.SuperMesh;
 import com.gameshopcorp.heroes.graphics.SuperSurface;
 import com.jme3.math.Vector2f;
-import com.jme3.math.Vector3f;
 import com.jme3.math.Vector4f;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SuperCube {

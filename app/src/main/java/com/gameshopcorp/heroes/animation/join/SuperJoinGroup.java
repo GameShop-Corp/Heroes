@@ -1,4 +1,4 @@
-package com.gameshopcorp.heroes.animation;
+package com.gameshopcorp.heroes.animation.join;
 
 import com.jme3.math.Vector3f;
 
@@ -17,6 +17,13 @@ public class SuperJoinGroup {
 
         for (SuperJoin sj: superJoins){
             sj.moveJoin(move);
+        }
+    }
+
+    public void moveJoinWithScale(Vector3f move){
+
+        for (SuperJoin sj: superJoins){
+            sj.moveJoinWithScale(move);
         }
     }
 }
