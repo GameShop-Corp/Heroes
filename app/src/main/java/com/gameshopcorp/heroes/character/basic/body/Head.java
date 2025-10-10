@@ -2,6 +2,7 @@ package com.gameshopcorp.heroes.character.basic.body;
 
 import com.gameshopcorp.heroes.character.basic.body.base.Base;
 import com.gameshopcorp.heroes.supermesh.SuperCube;
+import com.jme3.math.Vector2f;
 import com.jme3.math.Vector3f;
 import com.jme3.math.Vector4f;
 
@@ -10,10 +11,15 @@ public class Head extends Base {
     public Head(int numPoints, Vector4f baseColor){
         super(numPoints, baseColor);
 
-        this.superMesh.superJoins.get("bottomFrontLeft").moveJoin(new Vector3f(.25f,.25f,-.25f));
 
-        this.superMesh.superJoins.get("edgeBottomFrontMidLeft").moveJoin(new Vector3f(0,-.15f,-.1f));
+        findJoin(get("bottom"), new Vector2f(0,0)).moveJoin(new Vector3f(0,0,1));
 
+        //this.superMesh.findJoin(this.superMesh.superMesh.get("bottom"), new Vector2f(3,3)).moveJoin(new Vector3f(.25f,.25f,-.25f));
+
+        //this.superMesh.superJoins.get("edgeBottomFrontMidLeft").moveJoin(new Vector3f(0,-.15f,-.1f));
+       // this.superMesh.findJoin(this.superMesh.superMesh.get("bottom"))
+
+        /*
         this.superMesh.superJoins.get("edgeLeftBottomMidFront").moveJoin(new Vector3f(0, -.5f, 0f));
         this.superMesh.superJoins.get("edgeLeftBottomMidBack").moveJoin(new Vector3f(0, -.25f, -.25f));
 
@@ -96,6 +102,7 @@ public class Head extends Base {
         this.superMesh.superMesh.get("bottom").moveSuperLine((byte) 2, (byte) 1,new Vector3f(0,-.75f,0));
         this.superMesh.superMesh.get("bottom").moveSuperLine((byte) 2, (byte) 2,new Vector3f(0,-.75f,0));
 
+        */
 
 
     }

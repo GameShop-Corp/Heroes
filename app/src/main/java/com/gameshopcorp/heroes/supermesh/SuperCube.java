@@ -6,13 +6,14 @@ import com.gameshopcorp.heroes.graphics.SuperSurface;
 import com.jme3.math.Vector2f;
 import com.jme3.math.Vector4f;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SuperCube {
 
     boolean debug = false;
     public SuperMesh superMesh;
-    public HashMap<String, SuperJoin> superJoins;
+    public ArrayList<SuperJoin> superJoins;
     public SuperCube(SuperSquare top, SuperSquare bottom, SuperSquare front, SuperSquare back, SuperSquare left, SuperSquare right){
 
 
@@ -36,7 +37,7 @@ public class SuperCube {
         }
 
 
-        superJoins = new HashMap<>();
+        superJoins = new ArrayList<>();
 
         SuperJoin topFrontLeft = new SuperJoin(new SuperSurface[]{superMesh.superMesh.get("top"), superMesh.superMesh.get("front"), superMesh.superMesh.get("left")}, new Vector2f[]{new Vector2f(3,0), new Vector2f(3,0), new Vector2f(3,3)});
         SuperJoin topFrontRight = new SuperJoin(new SuperSurface[]{superMesh.superMesh.get("top"), superMesh.superMesh.get("front"), superMesh.superMesh.get("right")}, new Vector2f[]{new Vector2f(3,3), new Vector2f(3,3), new Vector2f(3,3)});
@@ -82,45 +83,45 @@ public class SuperCube {
         //SuperJoin topFrontRight = new SuperJoin()
         //edgeRightBottomMidBack.moveJoin(new Vector3f( 1,-1,0));
 
-        superJoins.put("topFrontLeft", topFrontLeft);
-        superJoins.put("topFrontRight", topFrontRight);
-        superJoins.put("topBackLeft", topBackLeft);
-        superJoins.put("topBackRight", topBackRight);
+        superJoins.add(topFrontLeft);
+        superJoins.add(topFrontRight);
+        superJoins.add(topBackLeft);
+        superJoins.add(topBackRight);
 
-        superJoins.put("bottomFrontLeft", bottomFrontLeft);
-        superJoins.put("bottomFrontRight",bottomFrontRight);
-        superJoins.put("bottomBackLeft", bottomBackLeft);
-        superJoins.put("bottomBackRight", bottomBackRight);
+        superJoins.add(bottomFrontLeft);
+        superJoins.add(bottomFrontRight);
+        superJoins.add( bottomBackLeft);
+        superJoins.add( bottomBackRight);
 
-        superJoins.put("edgeTopFrontMidLeft", edgeTopFrontMidLeft);
-        superJoins.put("edgeTopFrontMidRight", edgeTopFrontMidRight);
-        superJoins.put("edgeBottomFrontMidLeft", edgeBottomFrontMidLeft);
-        superJoins.put("edgeBottomFrontMidRight", edgeBottomFrontMidRight);
+        superJoins.add(edgeTopFrontMidLeft);
+        superJoins.add(edgeTopFrontMidRight);
+        superJoins.add(edgeBottomFrontMidLeft);
+        superJoins.add(edgeBottomFrontMidRight);
 
-        superJoins.put("edgeTopBackMidLeft", edgeTopBackMidLeft);
-        superJoins.put("edgeTopBackMidRight", edgeTopBackMidRight);
-        superJoins.put("edgeBottomBackMidLeft", edgeBottomBackMidLeft);
-        superJoins.put("edgeBottomBackMidRight", edgeBottomBackMidRight);
+        superJoins.add(edgeTopBackMidLeft);
+        superJoins.add(edgeTopBackMidRight);
+        superJoins.add(edgeBottomBackMidLeft);
+        superJoins.add(edgeBottomBackMidRight);
 
-        superJoins.put("edgeFrontLeftMidTop", edgeFrontLeftMidTop);
-        superJoins.put("edgeFrontLeftMidBottom", edgeFrontLeftMidBottom);
-        superJoins.put("edgeFrontRightMidTop", edgeFrontRightMidTop);
-        superJoins.put("edgeFrontRightMidBottom", edgeFrontRightMidBottom);
+        superJoins.add(edgeFrontLeftMidTop);
+        superJoins.add(edgeFrontLeftMidBottom);
+        superJoins.add(edgeFrontRightMidTop);
+        superJoins.add(edgeFrontRightMidBottom);
 
-        superJoins.put("edgeBackLeftMidTop", edgeBackLeftMidTop);
-        superJoins.put("edgeBackLeftMidBottom", edgeBackLeftMidBottom);
-        superJoins.put("edgeBackRightMidTop", edgeBackRightMidTop);
-        superJoins.put("edgeBackRightMidBottom", edgeBackRightMidBottom);
+        superJoins.add( edgeBackLeftMidTop);
+        superJoins.add( edgeBackLeftMidBottom);
+        superJoins.add( edgeBackRightMidTop);
+        superJoins.add(edgeBackRightMidBottom);
 
-        superJoins.put("edgeLeftTopMidFront", edgeLeftTopMidFront);
-        superJoins.put("edgeLeftTopMidBack", edgeLeftTopMidBack);
-        superJoins.put("edgeLeftBottomMidFront", edgeLeftBottomMidFront);
-        superJoins.put("edgeLeftBottomMidBack", edgeLeftBottomMidBack);
+        superJoins.add(edgeLeftTopMidFront);
+        superJoins.add( edgeLeftTopMidBack);
+        superJoins.add( edgeLeftBottomMidFront);
+        superJoins.add(edgeLeftBottomMidBack);
 
-        superJoins.put("edgeRightTopMidFront", edgeRightTopMidFront);
-        superJoins.put("edgeRightTopMidBack", edgeRightTopMidBack);
-        superJoins.put("edgeRightBottomMidFront", edgeRightBottomMidFront);
-        superJoins.put("edgeRightBottomMidBack", edgeRightBottomMidBack);
+        superJoins.add( edgeRightTopMidFront);
+        superJoins.add( edgeRightTopMidBack);
+        superJoins.add( edgeRightBottomMidFront);
+        superJoins.add( edgeRightBottomMidBack);
 
         superMesh.superJoins = superJoins;
     }
